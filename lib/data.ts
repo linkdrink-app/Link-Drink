@@ -1,4 +1,4 @@
-import { Venue } from "../../../lib/types";
+import { Venue } from "./types";
 
 export const vibeCards = [
   { id: "social", emoji: "🥂", title: "Socialt" },
