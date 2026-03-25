@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(180deg, #140d0b 0%, #26150f 24%, #442317 56%, #f2e4d1 100%);
+  color: white;
+}
+
+button, input, select {
+  outline: none;
+}
