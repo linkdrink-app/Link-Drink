@@ -21,6 +21,7 @@ import { venues, vibeCards } from "@/lib/data";
 import { buildRank, buildRoute, walkMinutes } from "@/lib/ranking";
 import { Preferences } from "@/lib/types";
 import { PrimaryButton, SectionCard } from "@/components/ui";
+import MapboxRouteMap from "@/components/mapbox-route-map";
 
 type Step = 0 | 1 | 2 | 3 | 4 | 5;
 type RouteMode = "main" | "cheaper" | "more_party" | "more_social";
@@ -1319,7 +1320,15 @@ export default function HomePage() {
               </div>
 
               <EnergyCurve route={route} />
-              <RouteMap route={route} city={prefs.city} />
+              <MapboxRouteMap
+  cityName={cityLabel}
+  points={route.map((p) => ({
+    id: p.id,
+    name: p.name,
+    lat: p.lat,
+    lng: p.lng,
+  }))}
+/>
 
               {savedRounds.length > 0 ? (
                 <div className="rounded-[28px] border border-amber-100/10 bg-[#231816] p-5">
